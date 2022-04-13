@@ -4,11 +4,12 @@
 
     <div class="container-fluid">
       <div class="row justify-content-center flex-wrap">
-        <card class="card-size"
-              v-for="prod in this.products.items"
-              v-bind:key="prod.id"
-              v-bind:product="prod"
-              v-on:carrinho="pushShoppingCart"
+        <card
+          class="card-size"
+          v-for="prod in this.products.items"
+          v-bind:key="prod.id"
+          v-bind:product="prod"
+          v-on:carrinho="pushShoppingCart"
         ></card>
       </div>
     </div>
@@ -16,43 +17,43 @@
 </template>
 
 <script>
+import Card from "../components/Card.vue";
+import Navbar from "../components/Navbar.vue";
 
-import Card from '../components/Card.vue'
-import Navbar from '../components/Navbar.vue'
-
-const products = require('../api/products.json')
-
+const products = require("../api/products.json");
 
 export default {
-  name: 'App',
+  name: "App",
   data: function () {
     return {
       products,
       store: [],
-      total: 0
+      total: 0,
     };
   },
   components: {
     Card,
-    Navbar
+    Navbar,
   },
   methods: {
     pushShoppingCart(payload) {
-      this.total += payload.payload.priceTags[0].value
-      this.store.push(payload.payload)
-    }
-  }
-
-}
+      this.total +=
+        payload.payload.priceTags[0].value * -1 -
+        payload.payload.priceTags[0].value *
+          -1 *
+          (payload.payload.priceTags[0].rawValue * -1);
+      this.store.push(payload.payload);
+    },
+  },
+};
 </script>
 
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
-
-*{
-  font-family: 'Poppins', sans-serif;
+* {
+  font-family: "Poppins", sans-serif;
 }
 
 .card-size {
@@ -70,6 +71,4 @@ export default {
     width: 100%;
   }
 }
-
-
 </style>

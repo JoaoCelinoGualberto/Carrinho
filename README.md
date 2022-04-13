@@ -1,11 +1,3 @@
-<h1 align="center">
-#img aqui
-</h1>
-
-<h1 align="center">
-#img aqui
-</h1>
-
 ## 📝Sobre
 
 O Projeto **Meu Carrinho** é uma interface One Page criada com o intuito de consumir uma API que simula compras em uma loja online trazendo em formato de lista informações sobre os itens e sendo possível adicioná-los em um carrinho, em que pedidos acima de R$ 10.00 o usuário recebe gratuidade no frete.
@@ -15,8 +7,8 @@ ___
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-- [Vue](https://vuejs.org/) 
-- [Flex Box]
+- [Vue 2.6.12](https://vuejs.org/) 
+- [Flex Box CSS]
 ___
 
 ## 📦Como baixar e executar o projeto
@@ -41,7 +33,7 @@ $ npm run serve
 #Compilar para a produção
 $ npm run build
 
-Lints and fixes files
+#Roda lints e corrige arquivos
 $ npm run lint
 ```
 ___

@@ -9,7 +9,7 @@
       v-if="this.$route.params.products == undefined"
     >
       <img style="max-width: 400px" :src="box" alt="" />
-      <p class="pt-3">Oops parece que voce não adicionou nenhum item</p>
+      <p class="pt-3">Oops parece que voce não adicionou nenhum item!</p>
     </div>
     <div v-else>
       <div>
@@ -40,7 +40,13 @@
                     R$ {{ item.priceTags[0].value * -1 }}
                   </p>
                   <p class="price-item-card">
-                    R$ {{ item.priceTags[0].value * -1 }}
+                    R$
+                    {{
+                      item.priceTags[0].value * -1 -
+                      item.priceTags[0].value *
+                        -1 *
+                        (item.priceTags[0].rawValue * -1)
+                    }}
                   </p>
                 </div>
               </div>
@@ -49,7 +55,7 @@
             <div class="card-body d-flex flex-column align-items-center">
               <div class="d-flex flex-row justify-content-between w-100">
                 <h5 class="card-title">Total</h5>
-                <p class="card-text">R$ {{ total }}</p>
+                <p class="card-text">R$ {{ total.toFixed(2) * -1 }}</p>
               </div>
 
               <p
