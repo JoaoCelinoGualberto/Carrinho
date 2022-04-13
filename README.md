@@ -8,6 +8,7 @@ ___
 O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 - [Vue 2.6.12](https://vuejs.org/) 
+- [Node 16.14.2](https://nodejs.org/en/)
 - [Flex Box CSS]
 ___
 
@@ -33,7 +34,7 @@ $ npm run serve
 #Compilar para a produção
 $ npm run build
 
-#Roda lints e corrige arquivos
+#Rodar lints e corrigir arquivos
 $ npm run lint
 ```
 ___
